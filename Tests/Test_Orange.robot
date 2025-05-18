@@ -52,15 +52,6 @@ verify dashboard page open
      Element Should Contain    //h6    ${dashboard}
     
 verify the items in the dashboard page
-    # ${expectedlist}=    Create List    Admin    PIM    Leave    Time    Recruitment    My Info    Performance    Dashboard    Directory    Maintenance    Claim    Buzz
-    # Wait Until Element Is Visible    //span[@class='oxd-text oxd-text--span oxd-main-menu-item--name']    10s
-    # ${elements}=    Get WebElements    //span[@class='oxd-text oxd-text--span oxd-main-menu-item--name']
-    # ${actuallist}=    Create List
-    # FOR    ${ele}    IN    @{elements}
-    #     Append To List    ${actuallist}    ${ele.text}
-    # END
-    # Lists Should Be Equal    ${actuallist}    ${expectedlist}
-
     @{expectedlist}=    Create List    Admin    PIM    Leave    Time    Recruitment    My Info    Performance    Dashboard    Directory    Maintenance    Claim    Buzz
     Wait Until Element Is Visible    xpath=//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name']    10s
     ${ele}=    Get WebElements    xpath=//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name']
